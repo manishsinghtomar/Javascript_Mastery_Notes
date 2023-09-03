@@ -241,4 +241,3 @@ for(let i=0 ; i <fruit.length;i++){
 // fruits3=[]; //not allowed 
 fruits3.push("mango");
 console.log(fruits3);
-
