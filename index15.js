@@ -1,4 +1,5 @@
 // reduce
+//it gives single value at the end .
 //this method also takes callback function as input 
 
 const numbers = [1,2,3,4,5];
@@ -44,4 +45,3 @@ let multi =[2,3,4,5].reduce( (a,b) => {
 },1);  //initial value has been added;
 
 console.log(multi);
-
