@@ -25,4 +25,4 @@ const MyUser = users.find((user)=>user.userId==3);
 console.log(MyUser);
 
 
-//for signal return statement we dont need to write return in arrow function.
+//for signal return statement we dont need to write 'return' in arrow function.
