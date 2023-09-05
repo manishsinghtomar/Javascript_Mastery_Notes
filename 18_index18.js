@@ -15,4 +15,18 @@ console.log(ans)
 //every method ---> true / false (boolean)
 
 
+// realistice example:
+
+const userCart =[
+    {productId: 1, productName: "mobile", price: 12000},
+    {productId: 2, productName: "laptop", price: 32000},
+    {productId: 3, productName: "tv", price: 15000},
+];
+
+
+//check every product.price < 30000 
+
+const answer = userCart.every((cartItem)=>cartItem.price < 30000);
+console.log(answer);
+
 
