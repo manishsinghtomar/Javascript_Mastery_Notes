@@ -1,3 +1,5 @@
+//what is prototype  
+
 function hello(){
     console.log("hello world");
 }
