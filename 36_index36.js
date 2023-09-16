@@ -1,5 +1,10 @@
 // Use prototype
 
+
+
+//function (that funciton creates object)
+//2.) add key value pair
+//3.) object ko return krega
 function createUser(firstName , lastName , email, age , address){
     const user= Object.create(createUser.prototype);// {}
     user.firstName = firstName;
