@@ -1,8 +1,15 @@
 //what is prototype  
+//Every object in JavaScript has a built-in property, which is called its prototype. The prototype is itself an object, so the prototype will have its own prototype, making what's called a prototype.
+
+//let hello2 =[1,2,3];
+let hello2 = new array (1,2,3);
+console.log(hello2.prototype);
+
 
 function hello(){
     console.log("hello world");
 }
+console.log(hello.prototype);
 
 // const hello = {key1 : "value1"} //prototype not present
 // const hello = ["value1","value2","value3"] //prototype not present
@@ -40,3 +47,5 @@ hello.prototype.sind = function(){
 };
 
 console.log(hello.prototype.sind());
+
+//by default array ka prototype array hi hota hai aur object ka prototype object hota hai but we can change  it into another type.
