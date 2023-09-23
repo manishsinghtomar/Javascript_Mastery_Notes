@@ -1,34 +1,59 @@
-// new keyword example
-//1) this ={}
-// 2) return {}
-//
+// using prototype with dunder proto ( __proto__ )
 
-// __proto__
-// official ecmascript document
-// [[prototype]]
+// const userMethods ={
+//     about: function(){
+    
+//         return `${this.firstName} is ${this.age} years old`;
+//     },
+//     is18: function(){
+//         return this.age >=18;
+//     },
+//      sing:function(){
+//      return 'toon na na na la la ';
+//     }
+// }
 
-//constructor function
-function CreateUser(firstName , lastName , email, age , address){
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.email = email;
-    this.age = age;
-    this.address = address;
+//-----------------------------------------------------------------------------------------
+function createUser(firstName , lastName , email, age , address){
+    const user = Object.create(createUser.prototype); // {} , here we set the prototype of createUser as __proto__  
+    user.firstName = firstName;
+    user.lastName = lastName;
+    user.email = email;
+    user.age = age;
+    user.address = address; 
+    return user;
 }
-
-CreateUser.prototype.about = function(){
-    return `${this.firstName}  is ${this.age} years old.`;
+//-------------------------------------------------------------------------------------------------------------//
+// prototype
+createUser.prototype.about = function(){
+    return `${this.firstName} is ${this.age} years old`;
 };
-CreateUser.prototype.is18 = function(){
-    return this.age >= 18;
-}
-CreateUser.prototype.sing = function(){
-    return "la la la la";
-}
+createUser.prototype.about = function(){
+    return this.age >=18;
+};
+createUser.prototype.about = function(){
+    return 'toon na na na la la ';
+};
 
-const user1 = new CreateUser('manish','Tomar','manishtomar00mt@gmail.com',23, "delhi");
-const user2 = new CreateUser('Sonal','Mishra','manishtomar00mt@gmail.com',23, "delhi");
-const user3 = new CreateUser('Varun','Tomar','varuntomar3233@gmail.com',18, "delhi");
+
+
+
+createUser.prototype.about = function(){
+    return `${this.firstName} is ${this.age} years old and live in ${this.address}`;
+ };
+
+createUser.prototype.is18 = function(){
+    return this.age>=18;
+ };
+createUser.prototype.sing = function(){
+    return 'tun naa na na la la ';
+};
+
+
+const user1 = createUser('manish','Tomar','manishtomar00mt@gmail.com',22, "delhi");
+const user2 = createUser('Sonal','Mishra','manishtomar00mt@gmail.com',22, "Bihar");
+const user3 = createUser('Varun','Tomar','varuntomar3233@gmail.com',18, "delhi");
 
 console.log(user1);
-user1.is18()
+console.log(user2.about());
+// console.log(user3.sing());
