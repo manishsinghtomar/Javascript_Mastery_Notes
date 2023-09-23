@@ -1,30 +1,19 @@
-//more about prototype
-
-function CreateUser(firstName , lastName , email, age , address){
+// new keyword
+function createUser(firstName , age){
     this.firstName = firstName;
-    this.lastName = lastName;
-    this.email = email;
     this.age = age;
-    this.address = address;
+}
+createUser.prototype.about=function(){
+    console.log(this.firstName, this.age);
 }
 
-CreateUser.prototype.about = function(){
-    return `${this.firstName}  is ${this.age} years old.`;
-};
-CreateUser.prototype.is18 = function(){
-    return this.age >= 18;
-}
-CreateUser.prototype.sing = function(){
-    return "la la la la";
-}
+const user1 = new createUser("Manish", 22);//user1  
 
-const user1 = new CreateUser('manish','Tomar','manishtomar00mt@gmail.com',23, "delhi");
-const user2 = new CreateUser('Sonal','Mishra','manishtomar00mt@gmail.com',23, "delhi");
-const user3 = new CreateUser('Varun','Tomar','varuntomar3233@gmail.com',18, "delhi");
+// WORKING OF NEW KEYWORD
 
-for(let key in user1){
-    // console.log(key);
-   if (user1.hasOwnProperty(key)){
-    console.log(key)
-   }
-}
+// 1.) first, it create empty object like  this = {} 
+// 2.) return this 
+// 3.) Object.create(createUser.prototype);    (it set the prototype of function as __proto__ relation bnane wala kaam yeh new keyword krega , agar javascript ko createUser m value nhi milegi toh wo createUser.prototype me dhundega.)
+
+console.log(user1);
+user1.about();
