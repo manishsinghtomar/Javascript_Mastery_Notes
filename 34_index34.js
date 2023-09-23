@@ -15,7 +15,8 @@ const userMethods ={
 //2.) add key value pair
 //3.) object ko return krega
 function createUser(firstName , lastName , email, age , address){
-    const user= Object.create(userMethods);// hence userMethod become the proto of user mean it can use the key value pair of userMethod object.
+    const user= Object.create(userMethods);// hence userMethod become the proto of user mean it can use the key value pair of userMethod object. 
+    // we dont need to define methods again and again like user.MethodName = MethodName;
     user.firstName = firstName;
     user.lastName = lastName;
     user.email = email;
